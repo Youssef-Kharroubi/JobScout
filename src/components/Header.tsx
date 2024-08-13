@@ -1,5 +1,7 @@
 import React from 'react';
-import remote from './remote-svg-logo.svg';
+import remote from '../remote-svg-logo.svg';
+import {Link,BrowserRouter as Router} from  'react-router-dom';
+import Statistics from '../pages/Statistics';
 export default function Header(){
     return (
         <header className="bg-white">
@@ -14,12 +16,13 @@ export default function Header(){
 
                     </div>
 
-                    {/*<div className="hidden md:block">*/}
-                    {/*    <nav aria-label="Global">*/}
-                    {/*        <ul className="flex items-center gap-6 text-sm">*/}
-                    {/*            <li>*/}
-                    {/*                <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> About </a>*/}
-                    {/*            </li>*/}
+                    <div className="hidden md:block">
+                        <nav aria-label="Global">
+
+                            <ul className="flex items-center gap-6 text-sm">
+                                <li>
+                                    <Link className="text-gray-500 transition hover:text-gray-500/75" to={"./Statistics"} > Stats </Link>
+                                </li>
 
                     {/*            <li>*/}
                     {/*                <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Careers </a>*/}
@@ -40,9 +43,10 @@ export default function Header(){
                     {/*            <li>*/}
                     {/*                <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Blog </a>*/}
                     {/*            </li>*/}
-                    {/*        </ul>*/}
-                    {/*    </nav>*/}
-                    {/*</div>*/}
+                            </ul>
+
+                        </nav>
+                    </div>
 
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
