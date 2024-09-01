@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Getting Started with JobScout
+
+### Hello Everyone, especially recruiters!
+
+Just kidding—sort of.  
+Last summer, I found myself deep in the job hunt within the tech industry, applying to various companies. Along the way, I encountered several job boards that were challenging to navigate, sparking an idea: What if I could create an application that aggregates job listings from various websites, but with a more intuitive search and filtering system?
+
+That’s how Job Scout was born. I decided to start by integrating the API from Arbeitnow, a platform offering numerous job opportunities in Germany. But this is just the beginning—I plan to incorporate APIs from other websites to expand the job listings even further.
+
+For the frontend, I’m using React.js, and I’m planning to implement Node.js for the backend. MongoDB will serve as the database to manage all the job data efficiently.
+
+This project is still in the early stages of development, as I’m working on it alongside my part-time job and studies. Below, you’ll find all the commands you need to run the project.
+
+And that’s the story behind Job Scout.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
