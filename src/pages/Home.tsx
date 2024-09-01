@@ -1,7 +1,10 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import Header from '../components/Header';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
 import JobCards from '../components/JobCards';
 import WelcomingBoard from '../components/WelcomingBoard';
 interface JobData {
@@ -47,19 +50,19 @@ export default function Home(){
 
     useEffect(() => {
         getData();
+    }, [jobData]);
 
-    }, []);
 
     const handlePageClick = (selectedItem: { selected: number }) => {
         setCurrentPage(selectedItem.selected);
     };
-
-    const offset = currentPage * itemsPerPage;
-    const pageCount = Math.ceil(jobData.length / itemsPerPage);
-
     const filteredJobData = jobData.filter(job =>
         keyword.split(',').some(kw => job.title.toLowerCase().includes(kw.trim().toLowerCase()))
     );
+    const offset = currentPage * itemsPerPage;
+    const pageCount = Math.ceil(filteredJobData.length / itemsPerPage);
+
+
 
     return (
         <div className="App">
@@ -93,6 +96,24 @@ export default function Home(){
                         <JobCards key={index} jobData={{ ...job, remote: job.remote ? 'YES' : 'NO' }} />
                     ))}
                 </div>
+                <div hidden={filteredJobData.length!==0}>
+                    <Stack spacing={2} sx={{ width: '20%' }}>
+                        <Alert severity="info">No jobs found</Alert>
+                    </Stack>
+                    <Box sx={{ width: '100%' }}>
+                        <Skeleton />
+                        <Skeleton animation="wave" />
+                        <Skeleton animation={false} />
+                    </Box>
+                    <Box sx={{ width: '100%' }}>
+                        <Skeleton />
+                        <Skeleton animation="wave" />
+                        <Skeleton animation={false} />
+                    </Box>
+                </div>
+
+                <div hidden={filteredJobData.length===0}>
+
                 <ReactPaginate
                     previousLabel={'previous'}
                     nextLabel={'next'}
@@ -110,6 +131,7 @@ export default function Home(){
                     nextLinkClassName={'px-3 py-2 border rounded text-black hover:bg-gray-400 hover:text-white'}
                     disabledClassName={'opacity-50 cursor-not-allowed'}
                 />
+                </div>
             </div>
         </div>
     );
