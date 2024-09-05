@@ -57,7 +57,9 @@ export default function Home(){
         setCurrentPage(selectedItem.selected);
     };
     const filteredJobData = jobData.filter(job =>
-        keyword.split(',').some(kw => job.title.toLowerCase().includes(kw.trim().toLowerCase()))
+        keyword.split(',').some(kw =>
+            job.job_types?.some(type => type.toLowerCase().includes(kw.trim().toLowerCase()))
+        )
     );
     const offset = currentPage * itemsPerPage;
     const pageCount = Math.ceil(filteredJobData.length / itemsPerPage);
@@ -68,10 +70,10 @@ export default function Home(){
         <div className="App">
             <WelcomingBoard />
             <span className="flex items-center">
-        <span className="h-px flex-1 bg-black"></span>
-        <span className="shrink-0 px-6">Welcome</span>
-        <span className="h-px flex-1 bg-black"></span>
-      </span>
+                <span className="h-px flex-1 bg-black"></span>
+                <span className="shrink-0 px-6">Welcome</span>
+                <span className="h-px flex-1 bg-black"></span>
+            </span>
             <div className="relative">
                 <form onSubmit={handleSubmit} className="flex justify-center">
                     <label htmlFor="Search" className="sr-only">
