@@ -92,7 +92,7 @@ export default function Home(){
                     </button>
                 </form>
             </div>
-            <div className="container mx-auto p-4">
+            <div className="container mx-auto max-w-screen-xl mt-4 mb-4 px-3 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
                     {filteredJobData.slice(offset, offset + itemsPerPage).map((job, index) => (
                         <JobCards key={index} jobData={{ ...job, remote: job.remote ? 'YES' : 'NO' }} />

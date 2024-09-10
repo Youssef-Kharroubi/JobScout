@@ -5,13 +5,13 @@ import Statistics from '../pages/Statistics';
 export default function Header(){
     return (
         <header className="bg-white">
-            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px-3 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
 
                         <a className="flex items-center text-black" href="/">
                             <img src={remote} alt="Home" className="h-8 mr-2" />
-                            <h1 className="text-xl font-bold">JobScout</h1>
+                            <h1 className="text-xl font-bold mr-2">JobScout</h1>
                         </a>
 
                     </div>
