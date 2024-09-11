@@ -69,9 +69,9 @@ export default function Home(){
     return (
         <div className="App">
             <WelcomingBoard />
-            <span className="flex items-center">
+            <span className="flex items-center mx-auto max-w-screen-xl mt-4 mb-4 px-3 sm:px-6 lg:px-8">
                 <span className="h-px flex-1 bg-black"></span>
-                <span className="shrink-0 px-6">Welcome</span>
+                <span className="shrink-0 px-6">WELCOME</span>
                 <span className="h-px flex-1 bg-black"></span>
             </span>
             <div className="relative">
