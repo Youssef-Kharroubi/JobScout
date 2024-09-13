@@ -3,7 +3,7 @@ import React from 'react';
 export default function WelcomingBoard() {
     return(
         <section>
-            <div className="mx-auto max-w-screen-xl mt-4 mb-4 px-3 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-screen-xl mt-20  mb-4 px-3 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="bg-black p-8 md:p-12 lg:px-16 lg:py-24">
                         <div className="mx-auto max-w-xl text-center">

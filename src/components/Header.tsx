@@ -4,7 +4,7 @@ import {Link,BrowserRouter as Router} from  'react-router-dom';
 import Statistics from '../pages/Statistics';
 export default function Header(){
     return (
-        <header className="bg-gray-100 fixed left-0 right-0 top-0">
+        <header className="bg-gray-100 fixed left-0 right-0 top-0 z-50 ">
             <div className="mx-auto max-w-screen-xl px-3 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
