@@ -8,12 +8,11 @@ export default function WelcomingBoard() {
                     <div className="bg-black p-8 md:p-12 lg:px-16 lg:py-24">
                         <div className="mx-auto max-w-xl text-center">
                             <h2 className="text-2xl font-bold text-white md:text-3xl">
-                               Are you a student looking for a remote Job/Intenrship ?
+                                Are you a student seeking a remote job or internship opportunity?
                             </h2>
 
                             <p className="hidden text-white/90 sm:mt-4 sm:block">
-                                You are in the right place, with JobScout you will find all the opportunities in Germany in the
-                                tech indusrty.
+                                You've come to the right place! With JobScout, you'll discover all the latest opportunities in Germany's thriving tech industry, helping you take the next step in your career.
                             </p>
 
                             <div className="mt-4 md:mt-8">
