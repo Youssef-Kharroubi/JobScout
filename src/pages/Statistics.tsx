@@ -54,7 +54,7 @@ export default function Statistics()  {
 
   return (
       <>
-      <div className="grid grid-cols-1 ">
+      <div className="grid grid-cols-1 mt-10">
       <div className="grid grid-cols-2 gap-1 mt-10">
           <PieChart
               series={[
