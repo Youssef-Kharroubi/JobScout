@@ -1,6 +1,7 @@
 import React from 'react';
 import remote from '../remote-svg-logo.svg';
 import {Link,BrowserRouter as Router} from  'react-router-dom';
+import Tooltip from '@mui/material/Tooltip';
 import Statistics from '../pages/Statistics';
 export default function Header(){
     return (
@@ -48,22 +49,27 @@ export default function Header(){
                         </nav>
                     </div>
 
+
+
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
+                            <Tooltip title="Login soon">
                             <a
                                 className="rounded-md bg-white px-5 py-2.5 text-sm font-medium text-black shadow hover:bg-black hover:text-white"
                                 href="#"
                             >
                                 Login
                             </a>
-
+                            </Tooltip>
                             <div className="hidden sm:flex">
+                                <Tooltip title="Register soon">
                                 <a
                                     className="rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white hover:text-black hover:bg-white"
                                     href="#"
                                 >
                                     Register
                                 </a>
+                                </Tooltip>
                             </div>
                         </div>
 
