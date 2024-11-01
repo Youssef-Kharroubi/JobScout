@@ -7,6 +7,7 @@ interface JobDataProps {
     job_types: string[];
     description: string;
     url: string;
+    image_src:string;
 }
 
 const JobCards: React.FC<{ jobData: JobDataProps }> = ({ jobData }) => {
@@ -17,10 +18,11 @@ const JobCards: React.FC<{ jobData: JobDataProps }> = ({ jobData }) => {
         location,
         description,
         remote,
-        job_types = []  // Provide a default empty array
+        job_types = [],
+        image_src
     } = jobData;
 
-    // Handle case where `type` is empty
+
     const typeDisplay = job_types.length > 0 ? job_types[0] : 'N/A';
 
     return (
@@ -46,7 +48,7 @@ const JobCards: React.FC<{ jobData: JobDataProps }> = ({ jobData }) => {
                             <div className="hidden sm:block sm:shrink-0">
                                 <img
                                     alt="Company logo"
-                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                                    src={image_src}
                                     className="w-16 h-16 rounded-lg object-cover shadow-sm"
                                 />
                             </div>

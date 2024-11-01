@@ -15,10 +15,11 @@ interface JobData {
     job_types: string[];
     description: string;
     url: string;
+
 }
 
 interface FilteredJobData extends JobData {
-
+    image_src:string;
 }
 export default function Home(){
     const [jobData, setJobData] = useState<FilteredJobData[]>([]);
@@ -29,7 +30,11 @@ export default function Home(){
     const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);
     };
-
+    const arrayOfImages = [
+       "https://images.unsplash.com/photo-1621274790572-7c32596bc67f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80",
+        "https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+    ]
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setKeyword(search);
@@ -60,7 +65,10 @@ export default function Home(){
         keyword.split(',').some(kw =>
             job.job_types?.some(type => type.toLowerCase().includes(kw.trim().toLowerCase()))
         )
-    );
+    ).map((job, index) => ({
+        ...job,
+        image_src: arrayOfImages[index % arrayOfImages.length], // Assign image based on index
+    }));;
     const offset = currentPage * itemsPerPage;
     const pageCount = Math.ceil(filteredJobData.length / itemsPerPage);
 
@@ -95,7 +103,7 @@ export default function Home(){
             <div className="container mx-auto max-w-screen-xl mt-4 mb-4 px-3 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
                     {filteredJobData.slice(offset, offset + itemsPerPage).map((job, index) => (
-                        <JobCards key={index} jobData={{ ...job, remote: job.remote ? 'YES' : 'NO' }} />
+                        <JobCards key={index} jobData={{ ...job, remote: job.remote ? 'YES' : 'NO'}} />
                     ))}
                 </div>
                 <div hidden={filteredJobData.length!==0}>
